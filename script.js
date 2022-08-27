@@ -64,16 +64,20 @@ form.addEventListener('submit', function(e) {
     }
     else if(!(Phonenumber.value.startsWith("080")) && (!(Phonenumber.value.startsWith("070"))) && (!(Phonenumber.value.startsWith("081"))) && (!(Phonenumber.value.startsWith("090"))) && (!(Phonenumber.value.startsWith("091")))){
     
-        alert('Phonenumber Requires 080,070,081,090,')
-        // errorphonenumber.innerHTML = "required to start with 080,070,081,090"
-        errorphonenumber.style.color = "red"
+        alert('Phone_Number Require to Start With 080,070,081 or 090,')
         pnumber.style.display = "none"
     }
     if(Upload.value === "" || Upload.value === "null"){
         errorupload.innerHTML = "Upload File"
         errorupload.style.color = 'red'
     }
-    if else(upload.file == )
+    
+    
+    else if(Upload.files[0].size > (1024*1024*1) ){
+            alert('File is Larger Than 1mb')
+            file.style.display = 'none'
+    }
+    
     
     if(!(errorname.value || errortitle.value || erroremail.value|| errorphonenumber.value || errorupload.value)){
         document.getElementById('titles').innerHTML = Title.value
@@ -82,75 +86,19 @@ form.addEventListener('submit', function(e) {
         document.getElementById('emails').innerHTML = Email.value
         document.getElementById('file').innerHTML = Upload.value
    }
+    
+   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+})
+function getfileinfos() {
+    let file = form['upload'].files[0];
+    let size = (parseInt(file.size) / 1024).toFixed(2);
+    let imagename = file.name;
+    let lastmodfy = file.lastModifiedDate
+    document.querySelector('#files_informations').innerHTML = `Name: ${imagename} <br>
+    Size: ${size} MB <br> Modified Date: ${lastmodfy} <br>
+    `
+}
 
     
-    // let errs = "";
-    //     for (let i in errors) {
-    //         // console.log(errors[i]);
-    //         errs += errors[i] + "<br>";
-    //     }
 
-
-
-
-
-
-
-
-// if (name.value == '' || name.value == 'null'){
-//     showerror.innerHTML += "Please Provide Your Name" + "<br>"   
-// }
-// if (email.value == '' || email.value == 'null'){
-//     showerror.innerHTML += 'Please Provide Your Email' +"<br>"
-// }
-// if (phonenumber.value == '' || phonenumber.value == 'null'){
-//     showerror.innerHTML += "Please Provide Your Phone_Number"  +"<br>"
-// }
-// if (title.value == '' || title.value == 'null'){
-//     showerror.innerHTML += "Title Required"  +"<br>"
-// }
-// if (upload.value == '' || upload.value == 'null'){
-//     showerror.innerHTML += 'Upload Image'  +"<br>"
-// }
-})

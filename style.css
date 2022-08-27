@@ -8,10 +8,31 @@ input[type=number]{
     margin:10px;
     width: 55%;
     height: 30px;
-    border-radius: 10px;
+    border-radius: 10px;;
+}
+input[type=number]:hover{
+    padding: 10px;
+    color: white;
+    background-color: aqua;
+    font-size: 20px;
+}
+input[type=text]:hover{
+    padding: 10px;
+    color: white;
+    background-color: aqua;
+    font-size: 20px;
 }
 form{
     text-align: center;
+}
+.container{
+    border: 2px solid green;
+    border-radius: 20px;
+    background-color: azure;
+    position: relative;
+    top: 60px;
+    width: 100%
+    
 }
 /* input[type=submit]{
     background-color: black;
@@ -21,7 +42,7 @@ form{
     h1{
         text-align: center;
         font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        color: aqua;
+        color: green;
     
 }
 #displayerror{
@@ -30,5 +51,9 @@ form{
 }
 .inputvalues{
 text-align: center;
+color: brow;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
 }
 
